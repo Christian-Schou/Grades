@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace Grades
 {
@@ -12,6 +13,34 @@ namespace Grades
         {
             HighestGrade = 0;
             LowestGrade = float.MaxValue;
+        }
+
+        public string Description
+        {
+            get
+            {
+                string result;
+                switch (LetterGrade)
+                {
+                    case "A":
+                        result = "Excellent";
+                        break;
+                    case "B":
+                        result = "Great";
+                        break;
+                    case "C":
+                        result = "Above average";
+                        break;
+                    case "D":
+                        result = "Under average";
+                        break;
+                    default:
+                        result = "Failed";
+                        break;
+                }
+
+                return result;
+            }
         }
 
         public string LetterGrade
